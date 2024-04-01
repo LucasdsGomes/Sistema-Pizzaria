@@ -1,0 +1,19 @@
+<main>
+  <div class="container">
+    <label for="SelectPizza" style="font-family: 'Segoe Script', cursive; color: #645218;" class="form-label fs-3">Sabores de Pizza Criados</label>
+    {{#each novosSabores}}
+    <form action="/pedido/atualizar/{{this.id}}" method="post">
+      <div class="container">
+        <div class="mb-3">
+          
+          <div class="mb-3 my-3">
+            <label class="form-label">ID Sabor: {{this.id}}</label>
+            <input type="text" name="saborInserido" value="{{this.saborInserido}}" class="form-control">
+          </div>
+          <button type="submit" class="btn btn-primary">Atualizar</button>
+        </div>
+      </div>
+    </form>
+    {{/each}}
+  </div>
+</main>

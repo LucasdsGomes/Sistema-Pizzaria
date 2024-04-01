@@ -1,0 +1,28 @@
+<main>
+  <form action="/pedido/cadastrar" method="post">
+    <div class="container">
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" style="font-family: 'Segoe Script', cursive; color: #645218;" class="form-label fs-2">Insira um novo sabor: </label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" name="novoSabor" placeholder="Pepperoni, Strogonoff">
+      </div>
+      <button type="submit" class="btn btn-primary">Enviar Pedido</button>
+    </div>
+  </form>
+</main>
+
+{{!-- <div class="container">
+  <div class="mb-3">
+    <label for="SelectPizza" class="form-label">Sabores de Pizza</label>
+    <select id="SelectPizza" class="form-select" name="sabor">
+      <option selected disabled>Selecione um sabor</option>
+      {{#each sabores}}
+        <option value="{{this.id}}">{{this.sabor}}</option>
+      {{/each}}
+    </select>
+  </div>
+  <div class="mb-3">
+    <label for="exampleFormControlTextarea1" class="form-label">Observação</label>
+    <textarea class="form-control" id="exampleFormControlTextarea1" name="observacao" rows="3" placeholder="Insira alguma descrição para a melhor experiência do seu pedido."></textarea>
+  </div>
+  <button type="submit" class="btn btn-primary">Enviar Pedido</button>
+</div> --}}
