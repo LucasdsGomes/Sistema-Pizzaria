@@ -1,0 +1,31 @@
+#tituloSelectPizza,
+#tituloOpcoes,
+#tituloInformacaoUnica,
+#tituloInformacoes,
+#tituloRemocao {
+    font-family: 'Segoe Script', cursive; color: #645218;
+}
+
+#tituloPizzaria {
+    font-family: 'Segoe Script', cursive; font-weight: bold;
+}
+
+#corpoConteudo {
+    background-color:#ffe4d1;
+}
+
+#inputQuantidade {
+    width: 100px;
+}
+
+#titulo {
+    font-weight: bold;
+}
+
+#naveBack {
+    background-image: linear-gradient(to right, #ff7e5f, #feb47b);
+}
+
+#imageIcon {
+    width: 50px;
+}

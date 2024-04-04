@@ -1,28 +1,26 @@
 <main>
   <div class="container">
     <table class="table mt-5">
-      <h2 style="font-family: 'Segoe Script', cursive; color: #645218;">Informação do seu sabor único</h2>
+      <h2 id="tituloInformacaoUnica">Informação do seu sabor único</h2>
       <thead>
         <tr>
           <th scope="col">ID</th>
           <th scope="col">Sabor</th>
           <th scope="col">Data de Inserção</th>
+          <th scope="col">Quantidade</th>
+          <th scope="col">Tamanho</th>
           <th scope="col">Pedido em Atividade</th>
         </tr>
       </thead>
       <tbody>
-        {{#if saborCriado}}
           <tr>
-            <th scope="row">{{saborCriado.id}}</th>
-            <td>{{saborCriado.saborInserido}}</td>
-            <td>{{saborCriado.datainsercao}}</td>
-            <td>{{saborCriado.status}}</td>
+            <td>{{saborCriado}}</td>
+            <td>{{valorSabor}}</td>
+            <td>{{valorDataInsercao}}</td>
+            <td>{{valorQtPedido}}</td>
+            <td>{{valorTamPedido}}</td>
+            <td>{{valorStatus}}</td>
           </tr>
-        {{else}}
-          <tr>
-            <th scope="row" colspan="4">Não há sabores criados.</th>
-          </tr>
-        {{/if}}
       </tbody>
     </table>
   </div>

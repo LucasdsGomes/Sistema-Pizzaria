@@ -1,11 +1,13 @@
 <main>
   <div class="container">
     <table class="table mt-5">
-      <h2 style="font-family: 'Segoe Script', cursive; color: #645218;">Informações</h2>
+      <h2 id="tituloInformacoes">Informações</h2>
       <thead>
         <tr>
           <th scope="col">ID</th>
           <th scope="col">Sabor</th>
+          <th scope="col">Tamanho</th>
+          <th scope="col">Quantidade</th>
         </tr>
       </thead>
       <tbody>
@@ -15,10 +17,16 @@
             <td>
             <a href="/pedido/informacao/{{this.id}}">{{this.saborInserido}}</a>
             </td>
+            <td>
+            <a>{{this.tamanhoPizza}}</a>
+            </td>
+            <td>
+            <a>{{this.quantidadePedido}}</a>
+            </td>
           </tr>
         {{else}}
           <tr>
-            <th scope="row" colspan="2">Não há sabores criados.</th>
+            <th scope="row" colspan="4">Não há sabores criados.</th>
           </tr>
         {{/each}}
       </tbody>

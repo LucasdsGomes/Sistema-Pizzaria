@@ -13,15 +13,16 @@ app.use(
 );
 
 app.use(express.json());
+app.use(express.static("public"))
 
 const exphbs = require("express-handlebars");
 
 app.engine("handlebars", exphbs.engine());
 app.set("view engine", "handlebars");
 
-
 var novosSabores = [];
 var proximoId = 0;
+
 
 app.get("/pedido", (req, res) => {
   res.render(`home`);
@@ -39,7 +40,12 @@ app.post("/pedido/atualizar/:id", (req, res) => {
   const idSabor = parseInt(req.params.id);
   const index = novosSabores.findIndex(sabor => sabor.id === idSabor);
   const novoNomeSabor = req.body.saborInserido;
+  const novoQtPedido = req.body.quantidadePedido;
+  const novoTamPedido = req.body.tamanhoPizza;
+
   novosSabores[index].saborInserido = novoNomeSabor;
+  novosSabores[index].quantidadePedido = novoQtPedido;
+  novosSabores[index].tamanhoPizza = novoTamPedido;
   console.log("Sabor atualizado com sucesso...");
   res.redirect("/");
 });
@@ -69,9 +75,23 @@ app.get("/pedido/informacao", (req, res) => {
 app.get("/pedido/informacao/:id", (req, res) => {
   const id = parseInt(req.params.id);
 
-  const saborCriado = novosSabores.find((sab) => sab.id === id);
-  
-  res.render("informacao", { saborCriado: saborCriado });
+  const index = novosSabores.findIndex((sabor) => sabor.id === id);
+  if (index !== -1) {
+    const valorSabor = novosSabores[index].saborInserido;
+    const valorQtPedido = novosSabores[index].quantidadePedido;
+    const valorTamPedido = novosSabores[index].tamanhoPizza;
+    const valorDataInsercao = novosSabores[index].datainsercao;
+    const valorStatus = novosSabores[index].status;
+
+    res.render("informacao", {
+      saborCriado: index,
+      valorDataInsercao: valorDataInsercao,
+      valorStatus: valorStatus,
+      valorTamPedido: valorTamPedido,
+      valorQtPedido: valorQtPedido,
+      valorSabor: valorSabor,
+    });
+  }
 });
 
 app.get("/pedido/cadastrar", (req, res) => {
@@ -81,6 +101,9 @@ app.get("/pedido/cadastrar", (req, res) => {
 app.post("/pedido/cadastrar", (req, res) => {
   const saborInserido = req.body.novoSabor;
   const datainsercao = moment().format('DD/MM/YYYY HH:mm:ss');
+  const quantidadePedido = req.body.quantidadePedido;
+  const tamanhoPizza = req.body.tamanhoPizza;
+
   var status = true;
 
   novosSabores.push({
@@ -88,7 +111,11 @@ app.post("/pedido/cadastrar", (req, res) => {
     saborInserido: saborInserido,
     datainsercao: datainsercao,
     status: status,
+    quantidadePedido: quantidadePedido,
+    tamanhoPizza: tamanhoPizza, 
   });
+
+  console.log(novosSabores)
 
   console.log("Sabor cadastrado com sucesso...")
   res.redirect("/");

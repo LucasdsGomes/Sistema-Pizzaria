@@ -3,26 +3,22 @@
     <div class="container">
       <div class="mb-3">
         <label for="exampleFormControlInput1" style="font-family: 'Segoe Script', cursive; color: #645218;" class="form-label fs-2">Insira um novo sabor: </label>
-        <input type="text" class="form-control" id="exampleFormControlInput1" name="novoSabor" placeholder="Pepperoni, Strogonoff">
+        <input type="text" class="form-control" id="exampleFormControlInput1" name="novoSabor" placeholder="Pepperoni, Strogonoff" required>
       </div>
-      <button type="submit" class="btn btn-primary">Enviar Pedido</button>
+      <div class="mb-3 mt-3">
+        <label for="exampleInputTamanho1" style="font-family: 'Segoe Script', cursive; color: #645218;" class="form-label fs-2">Selecione o Tamanho da Sua Pizza: </label>
+        <select class="form-select" aria-label="Default select example" name="tamanhoPizza" required>
+          <option disabled>Selecione</option>
+          <option>Pequena - 4 Fatias</option>
+          <option>Média - 6 Fatias</option>
+          <option>Grande - 8 Fatias</option>
+        </select>
+        <div class="mb-3 mt-3">
+          <label for="exampleFormControlInput1" style="font-family: 'Segoe Script', cursive; color: #645218;" class="form-label fs-2">Insira a quantidade: </label>
+          <input type="number" class="form-control" id="exampleFormControlInput1" style="width: 100px;" name="quantidadePedido" min="1" max="10" placeholder="Qtds" onkeydown="return false" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Enviar Pedido</button>
+      </div>  
     </div>
   </form>
 </main>
-
-{{!-- <div class="container">
-  <div class="mb-3">
-    <label for="SelectPizza" class="form-label">Sabores de Pizza</label>
-    <select id="SelectPizza" class="form-select" name="sabor">
-      <option selected disabled>Selecione um sabor</option>
-      {{#each sabores}}
-        <option value="{{this.id}}">{{this.sabor}}</option>
-      {{/each}}
-    </select>
-  </div>
-  <div class="mb-3">
-    <label for="exampleFormControlTextarea1" class="form-label">Observação</label>
-    <textarea class="form-control" id="exampleFormControlTextarea1" name="observacao" rows="3" placeholder="Insira alguma descrição para a melhor experiência do seu pedido."></textarea>
-  </div>
-  <button type="submit" class="btn btn-primary">Enviar Pedido</button>
-</div> --}}
