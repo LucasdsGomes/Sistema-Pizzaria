@@ -8,25 +8,36 @@
           <th scope="col">Sabor</th>
           <th scope="col">Tamanho</th>
           <th scope="col">Quantidade</th>
+          <th scope="col">Operações</th>
         </tr>
       </thead>
       <tbody>
-        {{#each novosSabores}}
+        {{#each allPizza}}
           <tr>
-            <th scope="row">{{@index}}</th>
+            <th scope="row">{{id}}</th>
             <td>
-            <a href="/pedido/informacao/{{this.id}}">{{this.saborInserido}}</a>
+              <a href="/pedido/informacao/{{id}}">{{novoSabor}}</a>
             </td>
             <td>
-            <a>{{this.tamanhoPizza}}</a>
+              <a>{{tamanhoPizza}}</a>
             </td>
             <td>
-            <a>{{this.quantidadePedido}}</a>
+              <a>{{quantidadePedido}}</a>
+            </td>
+            <td>
+              <form action="/pedido/remocao/{{id}}" method="POST" id="formDisplay">
+                <button type="submit" class="btn btn-danger btn-sm mx-1">
+                  <i class="fas fa-trash"></i>
+                </button>
+              </form>
+              <a href="/pedido/atualizar" class="btn btn-primary btn-sm mx-1">
+                <i class="fa-regular fa-pen-to-square"></i>
+              </a>
             </td>
           </tr>
         {{else}}
           <tr>
-            <th scope="row" colspan="4">Não há sabores criados.</th>
+            <th scope="row" colspan="5">Não há sabores criados.</th>
           </tr>
         {{/each}}
       </tbody>

@@ -13,14 +13,20 @@
         </tr>
       </thead>
       <tbody>
+        {{#if saborProcuraID}}
           <tr>
-            <td>{{saborCriado}}</td>
-            <td>{{valorSabor}}</td>
-            <td>{{valorDataInsercao}}</td>
-            <td>{{valorQtPedido}}</td>
-            <td>{{valorTamPedido}}</td>
-            <td>{{valorStatus}}</td>
+            <td>{{saborProcuraID.id}}</td>
+            <td>{{saborProcuraID.novoSabor}}</td>
+            <td>{{saborProcuraID.datainsercao}}</td>
+            <td>{{saborProcuraID.quantidadePedido}}</td>
+            <td>{{saborProcuraID.tamanhoPizza}}</td>
+            <td>{{saborProcuraID.status}}</td>
           </tr>
+        {{else}}
+          <tr>
+            <th scope="row" colspan="6">Informações Incompletas.</th>
+          </tr>
+        {{/if}}
       </tbody>
     </table>
   </div>

@@ -3,29 +3,115 @@
 #tituloInformacaoUnica,
 #tituloInformacoes,
 #tituloRemocao {
-    font-family: 'Segoe Script', cursive; color: #645218;
+  font-family: "Segoe Script", cursive;
+  color: #645218;
 }
 
 #tituloPizzaria {
-    font-family: 'Segoe Script', cursive; font-weight: bold;
+  font-family: "Segoe Script", cursive;
+  font-weight: bold;
+}
+
+#naohasabor {
+  font-family: "Segoe Script", cursive;
+  font-weight: bold;
+  font-size: 30px;
 }
 
 #corpoConteudo {
-    background-color:#ffe4d1;
+  background-color: #ffe4d1;
 }
 
 #inputQuantidade {
-    width: 100px;
+  width: 100px;
 }
 
 #titulo {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 #naveBack {
-    background-image: linear-gradient(to right, #ff7e5f, #feb47b);
+  background-image: linear-gradient(to right, #ff7e5f, #feb47b);
 }
 
 #imageIcon {
-    width: 50px;
+  width: 50px;
+}
+
+#formDisplay {
+  display: inline;
+}
+
+#containerCadastro,
+#containerLogin {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background: linear-gradient(to right, #ff7e5f, #feb47b);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#formCadastro,
+#formLogin {
+  display: flex;
+  flex-direction: column;
+}
+
+#textoCadastro,
+#entrarLogin {
+    font-family: "Segoe Script", cursive;
+  font-size: 24px;
+  text-decoration: none;
+  color: white;
+  display: block;
+  margin-bottom: 20px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#divCadastro,
+#divLogin {
+  margin-bottom: 15px;
+}
+
+#textoNome,
+#textoSenha,
+#emailCadastro,
+#emailLogin {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+#botaoCadastrar,
+#botaoEntrar {
+  background-color: #eed049;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+#botaoCadastrar:hover,
+#botaoEntrar:hover {
+  background-color: #f7db3e;
+}
+
+#textoNovoSabor {
+  font-family: 'Segoe Script', cursive; color: #645218;
+}
+
+#inputQuantidade {
+  width: 100px;
 }

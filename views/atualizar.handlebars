@@ -1,18 +1,50 @@
 <main>
   <div class="container">
     <label for="SelectPizza" id="tituloSelectPizza" class="form-label fs-3">Sabores de Pizza Criados</label>
-    {{#each novosSabores}}
-    <form action="/pedido/atualizar/{{this.id}}" method="post">
+    {{#each allPizza}}
+    <form action="/pedido/atualizar/{{id}}" method="post">
       <div class="container">
         <div class="mb-3">
           
           <div class="mb-3 my-3">
-            <label id="titulo" class="form-label">ID Sabor: {{@index}}</label>
-            <input type="text" name="saborInserido" value="{{this.saborInserido}}" class="form-control mb-2">
+            <label id="titulo" class="form-label">ID Sabor: {{id}}</label>
+            <br>
+            <label class="form-label">Edite o Sabor:</label>
+            <select class="form-select" name="novoSabor" required>
+              <option selected disabled>{{novoSabor}}</option>
+              <option>Strogonoff de Frango</option>
+              <option>Calabresa</option>
+              <option>Pepperoni</option>
+              <option>Frango com Bacon</option>
+              <option>Quatro Queijos</option>
+              <option>Gorgonzola</option>
+              <option>Frango com Catupiry</option>
+              <option disabled>--Pizzas Doces--</option>
+              <option>Chocolate com Morango</option>
+              <option>Chocolate</option>
+              <option>Leite ninho</option>
+              <option>Queijo com goiabada</option>
+              <option>Banana com Leite Condensado</option>
+              <option>Chocolate com Banana</option>
+              <option>Confete</option>
+            </select>
             <label class="form-label">Quantidade do Pedido: </label>
-            <input id="inputQuantidade" type="number" class="form-control" id="exampleFormControlInput1" value="{{this.quantidadePedido}}" name="quantidadePedido" min="1" max="10" onkeydown="return false">
+            <select type="number" class="form-select" name="novaQtd" required>
+              <option selected disabled>{{quantidadePedido}}</option>
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+              <option>6</option>
+              <option>7</option>
+              <option>8</option>
+              <option>9</option>
+              <option>10</option>
+          </select>
             <label class="form-label">Tamanho da Pizza: </label>
-            <select class="form-select" aria-label="Default select example" name="tamanhoPizza">
+            <select class="form-select" name="novoTamanho" required>
+              <option selected disabled>{{tamanhoPizza}}</option>
               <option>Pequena - 4 Fatias</option>
               <option>Média - 6 Fatias</option>
               <option>Grande - 8 Fatias</option>
@@ -21,6 +53,10 @@
           <button type="submit" class="btn btn-primary">Atualizar</button>
         </div>
                   <span>-----------------------------------------------------------------</span>
+      </div>
+    {{else}}
+      <div class="container text-center">
+        <p id="naohasabor">Não há sabores criados.</p>
       </div>
     </form>
     {{/each}}
