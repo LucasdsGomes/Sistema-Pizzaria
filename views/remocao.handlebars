@@ -1,28 +1,29 @@
 <main>
   <div class="container">
     <h2 id="tituloRemocao">Remoção</h2>
-    {{#each novosSabores}}
-    <form action="/pedido/remocao/{{this.id}}" method="post">
-      <table class="table mt-5">
-        
-        <thead>
-          <tr>
-            <th scope="col">ID</th>
-            <th scope="col">Sabor</th>
-            <th scope="col">Opções</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row">{{@index}}</th>
-            <td>
-              <a href="/pedido/informacao/{{this.id}}">{{this.saborInserido}}</a>
-            </td>
-            <td><button type="submit" class="btn btn-danger">Remover Item</button></td>
-          </tr>
-        </tbody>
-      </table>
-    </form>
+    {{#if allPizza.length}}
+      {{#each allPizza}}
+      <form action="/pedido/remocao/{{this.id}}" method="post">
+        <table class="table mt-5">
+          <thead>
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">Sabor</th>
+              <th scope="col">Opções</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">{{this.id}}</th>
+              <td>
+                <a href="/pedido/informacao/{{this.id}}">{{this.novoSabor}}</a>
+              </td>
+              <td><button type="submit" class="btn btn-danger">Remover Item</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </form>
+      {{/each}}
     {{else}}
     <table class="table mt-5">
       <thead>
@@ -34,10 +35,10 @@
       </thead>
       <tbody>
         <tr>
-          <th scope="row" colspan="3">Não há sabores criados.</th>
+          <td colspan="3" class="text-center">Não há sabores criados.</td>
         </tr>
       </tbody>
     </table>
-    {{/each}}
+    {{/if}}
   </div>
 </main>

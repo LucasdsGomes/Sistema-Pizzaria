@@ -2,20 +2,37 @@
   <form action="/pedido/cadastrar" method="post">
     <div class="container">
       <div class="mb-3">
-        <label for="exampleFormControlInput1" style="font-family: 'Segoe Script', cursive; color: #645218;" class="form-label fs-2">Insira um novo sabor: </label>
-        <input type="text" class="form-control" id="exampleFormControlInput1" name="novoSabor" placeholder="Pepperoni, Strogonoff" required>
+        <label for="exampleFormControlInput1" id="textoNovoSabor" class="form-label fs-2">Insira um novo sabor: </label>
+        <select class="form-select" aria-label="Default select example" name="novoSabor" required>
+          <option selected disabled>--Selecione--</option>
+          <option>Strogonoff de Frango</option>
+          <option>Calabresa</option>
+          <option>Pepperoni</option>
+          <option>Frango com Bacon</option>
+          <option>Quatro Queijos</option>
+          <option>Gorgonzola</option>
+          <option>Frango com Catupiry</option>
+          <option disabled>--Pizzas Doces--</option>
+          <option>Chocolate com Morango</option>
+          <option>Chocolate</option>
+          <option>Leite ninho</option>
+          <option>Queijo com goiabada</option>
+          <option>Banana com Leite Condensado</option>
+          <option>Chocolate com Banana</option>
+          <option>Confete</option>
+        </select>
       </div>
       <div class="mb-3 mt-3">
-        <label for="exampleInputTamanho1" style="font-family: 'Segoe Script', cursive; color: #645218;" class="form-label fs-2">Selecione o Tamanho da Sua Pizza: </label>
+        <label for="exampleInputTamanho1" id="textoNovoSabor" class="form-label fs-2">Selecione o Tamanho da Sua Pizza: </label>
         <select class="form-select" aria-label="Default select example" name="tamanhoPizza" required>
-          <option disabled>Selecione</option>
+          <option selected disabled>Selecione</option>
           <option>Pequena - 4 Fatias</option>
           <option>Média - 6 Fatias</option>
           <option>Grande - 8 Fatias</option>
         </select>
         <div class="mb-3 mt-3">
-          <label for="exampleFormControlInput1" style="font-family: 'Segoe Script', cursive; color: #645218;" class="form-label fs-2">Insira a quantidade: </label>
-          <input type="number" class="form-control" id="exampleFormControlInput1" style="width: 100px;" name="quantidadePedido" min="1" max="10" placeholder="Qtds" onkeydown="return false" required>
+          <label for="exampleFormControlInput1" id="textoNovoSabor" class="form-label fs-2">Insira a quantidade: </label>
+          <input type="number" class="form-control" id="inputQuantidade" name="quantidadePedido" min="1" max="10" placeholder="Qtds" onkeydown="return false" required>
         </div>
         <button type="submit" class="btn btn-primary">Enviar Pedido</button>
       </div>  
