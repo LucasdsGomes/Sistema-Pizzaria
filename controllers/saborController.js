@@ -65,7 +65,7 @@ module.exports = class SaborController {
     const userId = req.session.userId;
     const idSabor = parseInt(req.params.id);
     const novosDados = {
-      novoSabor: req.body.novoSabor,
+      novoSabor: String(req.body.saborAtualizado),
       tamanhoPizza: req.body.novoTamanho,
       quantidadePedido: req.body.novaQtd,
     }

@@ -10,10 +10,11 @@
             <label id="titulo" class="form-label">ID Sabor: {{id}}</label>
             <br>
             <label class="form-label">Edite o Sabor:</label>
-            <select class="form-select" name="novoSabor" required>
+            <input type="text" class="form-control" name="saborAtualizado" placeholder="{{novoSabor}}">
+            {{!-- <select class="form-select" name="novoSabor" required>
               <option selected disabled>{{novoSabor}}</option>
               <option>Strogonoff de Frango</option>
-              <option>Calabresa</option>
+              <option>Calabresa</option>  
               <option>Pepperoni</option>
               <option>Frango com Bacon</option>
               <option>Quatro Queijos</option>
@@ -27,7 +28,7 @@
               <option>Banana com Leite Condensado</option>
               <option>Chocolate com Banana</option>
               <option>Confete</option>
-            </select>
+            </select> --}}
             <label class="form-label">Quantidade do Pedido: </label>
             <select type="number" class="form-select" name="novaQtd" required>
               <option selected disabled>{{quantidadePedido}}</option>
