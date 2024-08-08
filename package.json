@@ -16,5 +16,16 @@
   },
   "devDependencies": {
     "nodemon": "^3.1.3"
-  }
+  },
+  "name": "sistema-pizzaria",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon start",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
 }
